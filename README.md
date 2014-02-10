@@ -6,7 +6,7 @@ Uses Ammo.JS and Three.JS to create an interactive simulation that can serve as 
 
 Ammo.JS is a Javascript port of the Bullet3D rigid-body kinematics physics engine.
 
-[!Preview Video](http://img.youtube.com/vi/jdQ9TF7VnqI/0.jpg)](http://youtu.be/jdQ9TF7VnqI)
+[![Preview Video](http://img.youtube.com/vi/jdQ9TF7VnqI/0.jpg)](http://youtu.be/jdQ9TF7VnqI)
 
 
 ## Senses
