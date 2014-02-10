@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>boxbox demo</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                font-weight: bold;
+                letter-spacing: .05em;
+                color: #777;
+                background-color: #d9d9d9;
+            }
+            canvas {
+                float: left;
+                background-color: white;
+            }
+            #hud {
+                float: left;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="bbdemo" width="450" height="600">
+            UPGRADE YOUR WEB BROWSER TO PLAY THIS GAME.
+        </canvas>
+        <div id="hud">
+			<button id="Move">Move</button><br/>
+			<button id="Rest">Rest</button><br/>
+			<button id="Shit">Shit</button><br/>
+			<button id="Fuck">Fuck</button><br/>
+
+			<button id="Feel">Feel</button><br/>
+			<button id="Explore">Explore</button><br/>
+
+            <!--arrow keys to move
+            <br>
+            space to jump
+            <br>
+            health: <span id="health">100</span>
+            <br>
+            score: <span id="score">0</span>-->
+			
+        </div>
+        <script src="jquery.min.js"></script>
+        <script src="Box2dWeb-2.1.a.3.min.js"></script>
+        <script src="boxbox.min.js"></script>
+        <script src="demo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="ammo.js-demos/other/jquery/jquery.mousewheel.js"></script>
+  <script src="ammo.js-demos/other/ammo/ammo.js"></script>
+  <script src="ammo.js-demos/src/ShapeDrawer.js"></script>
+  <script src="Three_ShapeDrawer.js"></script>
+  <script src="application.js"></script>
+  <script src="spacegraph.js"></script>
+  <script src="ammo.js-demos/other/three/Three.js"></script>
+  <script src="ammo.js-demos/other/three/Detector.js"></script>
+  <script src="ammo.js-demos/other/three/RequestAnimationFrame.js"></script>
+  <link rel="stylesheet" media="screen" href="ammo.js-demos/demo.css" />
+  <link rel="stylesheet" media="screen" href="spacegraph.css" />
+</head>
+<body style="background-color:black;">
+  <script>
+    var s = new Three_ShapeDrawer();
+    var d = new MyDemoApplication({shapeDrawer:s});
+    $("#error").hide();
+  </script>
+	<div id="Controls" style="z-index:5000">
+		<button id="RunningCheckbox" type="checkbox" value="Running" checked="true">Physics</button>
+		<input id="DisplaySensesCheckbox" type="checkbox" value="Running"/>Display Senses<br/>
+		<canvas id="SenseGrid"/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#Controls {
+	z-index: 5000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: black;
+	background-color: gray;
+}
+
+#SenseGrid {
+	width: 200px;
+	height: 200px;
+}
