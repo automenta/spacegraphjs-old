@@ -254,6 +254,35 @@ function newInsectron(sim, origin) {
 
 }
 
+function newMaze(world) {
+	//http://www.delorie.com/game-room/mazes/genmaze.cgi
+	//http://www.howtocreate.co.uk/tutorials/jsexamples/syntax/prepareInline.html
+	var maze = '+---+---+---+---+---+---+---+---+---+---+\n        |           |           |       |\n        |           |           |       |\n        |           |           |       |\n+---+   +   +---+   +   +---+   +   +   +\n|       |   |       |   |       |   |   |\n|       |   |       |   |       |   |   |\n|       |   |       |   |       |   |   |\n+   +---+   +---+   +   +   +---+   +   +\n|       |   |       |   |       |   |   |\n|       |   |       |   |       |   |   |\n|       |   |       |   |       |   |   |\n+---+   +   +   +---+---+---+   +---+   +\n|       |   |           |       |       |\n|       |   |           |       |       |\n|       |   |           |       |       |\n+   +---+   +---+---+   +   +---+   +---+\n|       |       |   |       |           |\n|       |       |   |       |           |\n|       |       |   |       |           |\n+   +   +---+   +   +---+---+   +   +   +\n|   |       |   |   |       |   |   |   |\n|   |       |   |   |       |   |   |   |\n|   |       |   |   |       |   |   |   |\n+---+---+   +   +   +   +   +---+   +---+\n|       |   |           |       |       |\n|       |   |           |       |       |\n|       |   |           |       |       |\n+   +---+   +---+---+   +   +   +---+   +\n|       |   |   |       |   |       |   |\n|       |   |   |       |   |       |   |\n|       |   |   |       |   |       |   |\n+---+   +   +   +   +---+---+   +   +   +\n|               |   |   |       |       |\n|               |   |   |       |       |\n|               |   |   |       |       |\n+   +---+---+---+   +   +   +---+   +   +\n|                   |       |       |    \n|                   |       |       |    \n|                   |       |       |    \n+---+---+---+---+---+---+---+---+---+---+\n';
+	maze = maze.split('\n');
+
+	//var mwidth = 10.0;
+	//var mheight = 10.0;
+	var cwidth = 2.0;
+	var cheight = 2.0;
+	var ox = -5;
+	var oy = -5;
+
+	for (var y = 0; y < maze.length; y++) {
+		var M = maze[y];
+		for (var x = 0; x < M.length; x++) {
+			var c = M[x];
+			if (c != ' ') {
+				  var boxShape1 = new Ammo.btBoxShape(world.tVec(cwidth, 1, cheight));
+				  var boxTrans1 = new Ammo.btTransform();
+				  boxTrans1.setIdentity();
+				  boxTrans1.setOrigin(world.tVec(ox + x * cwidth, 0, oy + y * cheight));
+				  var box1 = world.localCreateRigidBody(0, boxTrans1, boxShape1); //0 mass = static object
+			}
+		}
+	}
+	
+}
+
 
 MyDemoApplication.prototype.initPhysics = function () {
 	// Bullet-interfacing code
@@ -311,6 +340,7 @@ MyDemoApplication.prototype.initPhysics = function () {
 	newLimb(this, 10, [2, 4, 2], new Ammo.btVector3(1, 0, 0));
 	//newInsectron(this, [2,0,2]);
 
+	newMaze(this);
 
 	// Reset scene
 	this.clientResetScene();
